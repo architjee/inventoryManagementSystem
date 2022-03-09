@@ -1,4 +1,9 @@
-const { app, BrowserWindow } = require('electron')
+const electron = require("electron");
+
+const { app, BrowserWindow } = electron;
+// const { app, BrowserWindow } = require('electron')
+const globalShortcut = electron.globalShortcut
+
 // include the Node.js 'path' module at the top of your file
 const path = require('path')
 
@@ -14,6 +19,14 @@ const createWindow = () => {
   })
 
   win.loadFile('index.html')
+  globalShortcut.register('f5', function() {
+		console.log('f5 is pressed')
+		win.reload()
+	})
+	globalShortcut.register('CommandOrControl+R', function() {
+		console.log('CommandOrControl+R is pressed')
+		win.reload()
+	})
 }
 // ...
 
@@ -25,6 +38,5 @@ const createWindow = () => {
     })
   })
 
-  const Store = require('electron-store');
-
+const Store = require('electron-store');
 Store.initRenderer();
