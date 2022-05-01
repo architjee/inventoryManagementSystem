@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="UTF-8">
-  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
-  <!-- <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
-  <title>Hello World!</title>
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=0.7"> -->
-
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-  <link rel="stylesheet" href="node_modules/mdbootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
-  <link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css">
-  <!-- <link href="node_modules/mdbootstrap/css/addons/datatables2.min.css" rel="stylesheet"> -->
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" href="style.css">
+  
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <!-- <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <title>Hello World!</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=0.7"> -->
+    
+    <link rel="stylesheet" href="offlineModules/fontawesomeall.css">
+    <link rel="stylesheet" href="offlineModules/gapifamilyRoboto.css">
+    <link rel="stylesheet" href="node_modules/mdbootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
+    <link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css">
+    <!-- <link href="node_modules/mdbootstrap/css/addons/datatables2.min.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.5/b-2.2.2/datatables.min.css"/>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
-  <div><p id="status"></p><button id="reload">Reload</button></div>
+  <div><p id="status"></p><button id="exportButtonClist">Export Clist</button>
+    <button id="exportButtonStockIn">Export Sin</button>
+    <button id="exportButtonBalanceStock">Export BalanceS</button>
+    <button id="exportButtonStockOut">Export Sout</button>
+  </div>
   <table width=100%>
     <tr>
       <td width=33% style="border: 1px solid black;">
@@ -205,7 +211,10 @@ width="100%">
                 <th>
                   Lot No.
                 </th>
-                <th>Date
+                <th>Date Sin
+                </th>
+                <th>
+                  Date Sout
                 </th>
                 <th>C Name
                 </th>
@@ -248,10 +257,9 @@ width="100%">
   <script type="text/javascript" src="node_modules/mdbootstrap/js/popper.min.js"></script>
   <script type="text/javascript" src="node_modules/mdbootstrap/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
-  <!-- MDBootstrap Datatables  -->
-  <!-- <script type="text/javascript" src="node_modules/mdbootstrap/js/addons/datatables2.min.js"></script> -->
-  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-  <script src="node_modules\file-saverjs\FileSaver.js"></script>
+
+  <script src="offlineModules/dataTables.min.js"></script>
+   <!-- <script src="node_modules\file-saverjs\FileSaver.js"></script> -->
   <!-- <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script> -->
 
   <script src="node_modules\tableexport\src\v2\v2.1\tableexport-2.1.js"></script>

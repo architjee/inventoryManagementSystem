@@ -12,7 +12,3 @@ contextBridge.exposeInMainWorld('myAPI', {
     },
  }
 )
-function toMap (){
-
-}
-window.addEventListener('DOMContentLoaded', () => toMap);
